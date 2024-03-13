@@ -6,7 +6,7 @@ var ext = ".html";
 export default (options) => {
   return obj(async (file, enc, cb) => {
     console.log("Gulp-HEML: starting to process file: " + file.path);
-    self = this;
+
     if (file.isNull()) {
       this.push(file);
       return cb();
