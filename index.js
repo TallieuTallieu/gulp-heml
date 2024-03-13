@@ -1,11 +1,10 @@
-'use strict';
-const through = require('through2');
-const heml = require('heml');
-const path = require('path');
+import { obj } from 'through2';
+import heml from 'heml';
+import path from 'path';
 var ext = ".html";
 
-module.exports = options => {
-    return through.obj((file, enc, cb) => {
+export default options => {
+    return obj((file, enc, cb) => {
         if (file.isNull()) {
             cb(null, file);
             return;
@@ -39,4 +38,4 @@ module.exports = options => {
     });
 };
 
-module.exports.heml = heml;
+export { heml };
