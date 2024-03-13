@@ -6,23 +6,19 @@ var ext = ".html";
 export default (options) => {
   return obj(async (file, enc, cb) => {
     console.log("Gulp-HEML: starting to process file: " + file.path);
-    console.log(heml);
 
-    return cb();
     if (file.isNull()) {
       this.push(file);
-      // return cb();
     }
 
     if (file.isStream()) {
       console.log("Gulp-HEML: Streaming not supported");
-      // return cb();
     }
 
     if (file.isBuffer()) {
       const content = String(file.contents);
 
-      return heml(content, options).then((hemlResp) => {
+      heml(content, options).then((hemlResp) => {
         file.contents = Buffer.from(hemlResp.html);
         var replaceExt = replaceExt || false;
         if (typeof ext === "string" && ext.length > 0) {
@@ -42,7 +38,7 @@ export default (options) => {
       });
     }
 
-    // return cb();
+    return cb();
   });
 };
 
