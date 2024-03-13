@@ -18,12 +18,10 @@ export default (options) => {
 
     if (file.isBuffer()) {
       const content = String(file.contents);
-      console.log({ content, heml });
-      return cb(null, file);
 
-      return heml.default(content, options).then((hemlResp) => {
+      return heml(content, options).then((hemlResp) => {
         console.log({ hemlResp });
-        return cb(file);
+        return cb(null, file);
         file.contents = Buffer.from(hemlResp.html);
         var replaceExt = replaceExt || false;
         if (typeof ext === "string" && ext.length > 0) {
@@ -38,6 +36,7 @@ export default (options) => {
         }
 
         console.log("Gulp-HEML: finished processing file: " + file.path);
+        return cb(null, file);
       });
     }
 
