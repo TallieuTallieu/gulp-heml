@@ -7,6 +7,7 @@ export default (options) => {
   return obj((file, enc, cb) => {
     console.log("Gulp-HEML: starting to process file: " + file.path);
     cb(null, file);
+    return;
 
     if (file.isNull()) {
       cb(null, file);
