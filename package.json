@@ -1,5 +1,6 @@
 {
   "name": "gulp-heml",
+  "type": "module",
   "version": "1.0.0",
   "description": "Build responsive Mail with a Gulp-Workflow based on HEML",
   "main": "index.js",
