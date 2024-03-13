@@ -17,7 +17,7 @@
   "author": "Andre Bellmann",
   "license": "ISC",
   "dependencies": {
-    "heml": "https://github.com/TallieuTallieu/heml",
+    "@dragonzap/heml": "^1.5.2",
     "path": "^0.12.7",
     "through2": "^2.0.3"
   },
