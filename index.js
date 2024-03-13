@@ -18,24 +18,26 @@ export default (options) => {
     if (file.isBuffer()) {
       const content = String(file.contents);
 
-      heml(content, options).then((hemlResp) => {
-        file.contents = Buffer.from(hemlResp.html);
-        var replaceExt = replaceExt || false;
-        if (typeof ext === "string" && ext.length > 0) {
-          ext = ext.indexOf(".") === 0 ? ext : "." + ext;
-          let filePath = path.parse(file.path);
-          filePath.base = filePath.base.replace(
-            replaceExt ? replaceExt : path.extname(file.path),
-            ext,
-          );
-          // format the path back into an absolute
-          file.path = path.format(filePath);
-        }
+      console.log(heml);
 
-        console.log("Gulp-HEML: finished processing file: " + file.path);
+      // heml(content, options).then((hemlResp) => {
+      //   file.contents = Buffer.from(hemlResp.html);
+      //   var replaceExt = replaceExt || false;
+      //   if (typeof ext === "string" && ext.length > 0) {
+      //     ext = ext.indexOf(".") === 0 ? ext : "." + ext;
+      //     let filePath = path.parse(file.path);
+      //     filePath.base = filePath.base.replace(
+      //       replaceExt ? replaceExt : path.extname(file.path),
+      //       ext,
+      //     );
+      //     // format the path back into an absolute
+      //     file.path = path.format(filePath);
+      //   }
+      //
+      //   console.log("Gulp-HEML: finished processing file: " + file.path);
 
-        this.push(file);
-      });
+      this.push(file);
+      // });
     }
 
     return cb();
