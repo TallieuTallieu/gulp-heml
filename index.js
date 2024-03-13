@@ -6,8 +6,6 @@ var ext = ".html";
 export default (options) => {
   return obj((file, enc, cb) => {
     console.log("Gulp-HEML: starting to process file: " + file.path);
-    cb(null, file);
-    return;
 
     if (file.isNull()) {
       cb(null, file);
@@ -19,7 +17,7 @@ export default (options) => {
       return;
     }
 
-    heml(file.contents.toString(), options)
+    return heml(file.contents.toString(), options)
       .then(({ html, metadata, errors }) => {
         console.log("Gulp-HEML: starting to process file: " + file.path);
         file.contents = Buffer.from(html);
