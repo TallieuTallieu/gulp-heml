@@ -1,5 +1,5 @@
 const { obj } = require("through2");
-const heml = require("@dragonzap/heml");
+const { heml } = require("@dragonzap/heml");
 const path = require("path");
 var ext = ".html";
 
