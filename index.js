@@ -8,15 +8,18 @@ export default (options) => {
     console.log("Gulp-HEML: starting to process file: " + file.path);
 
     if (file.isNull()) {
-      this.push(file);
+      return cb(null, file);
     }
 
     if (file.isStream()) {
       console.log("Gulp-HEML: Streaming not supported");
+      return;
     }
 
     if (file.isBuffer()) {
       const content = String(file.contents);
+      console.log({ content, heml });
+      return cb(null, file);
 
       return heml.default(content, options).then((hemlResp) => {
         console.log({ hemlResp });
@@ -38,7 +41,7 @@ export default (options) => {
       });
     }
 
-    return cb();
+    return;
   });
 };
 
