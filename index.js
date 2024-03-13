@@ -9,12 +9,12 @@ export default (options) => {
 
     if (file.isNull()) {
       this.push(file);
-      return cb();
+      // return cb();
     }
 
     if (file.isStream()) {
       console.log("Gulp-HEML: Streaming not supported");
-      return cb();
+      // return cb();
     }
 
     if (file.isBuffer()) {
@@ -40,7 +40,7 @@ export default (options) => {
       });
     }
 
-    return cb();
+    // return cb();
   });
 };
 
