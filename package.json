@@ -1,7 +1,7 @@
 {
   "name": "gulp-heml",
-  "type": "module",
   "version": "1.0.0",
+  "type": "module",
   "description": "Build responsive Mail with a Gulp-Workflow based on HEML",
   "main": "index.js",
   "scripts": {
@@ -17,7 +17,7 @@
   "author": "Andre Bellmann",
   "license": "ISC",
   "dependencies": {
-    "@dragonzap/heml": "^1.5.2",
+    "heml": "https://github.com/TallieuTallieu/heml",
     "path": "^0.12.7",
     "through2": "^2.0.3"
   },

@@ -1,5 +1,5 @@
 import { obj } from "through2";
-import heml from "@dragonzap/heml";
+import heml from "heml";
 import path from "path";
 var ext = ".html";
 
