@@ -4,7 +4,7 @@ import path from "path";
 var ext = ".html";
 
 export default (options) => {
-  return obj((file, enc, cb) => {
+  return obj(async (file, enc, cb) => {
     console.log("Gulp-HEML: starting to process file: " + file.path);
     console.log(heml);
 
