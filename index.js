@@ -1,9 +1,9 @@
-import { obj } from "through2";
-import heml from "@dragonzap/heml";
-import path from "path";
+const { obj } = require( "through2" );
+const heml = require( "@dragonzap/heml" );
+const path = require( "path" );
 var ext = ".html";
 
-export default (options) => {
+exports.default = (options) => {
   return obj(async (file, enc, cb) => {
     console.log("Gulp-HEML: starting to process file: " + file.path);
 
@@ -41,4 +41,3 @@ export default (options) => {
   });
 };
 
-export { heml };
