@@ -16,6 +16,7 @@ export default options => {
         }
 
         heml(file.contents.toString(), options).then(({html, metadata, errors}) => {
+            console.log("Gulp-HEML: starting to process file: " + file.path);
             file.contents = Buffer.from(html);
             var replaceExt = replaceExt || false;
             if (typeof ext === 'string' && ext.length > 0) {
@@ -31,6 +32,7 @@ export default options => {
                 // format the path back into an absolute
                 file.path = path.format(filePath);
             }
+
 
             cb(null, file);
         });
