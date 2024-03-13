@@ -18,7 +18,7 @@ export default (options) => {
     if (file.isBuffer()) {
       const content = String(file.contents);
 
-      heml.default(content, options).then((hemlResp) => {
+      return heml.default(content, options).then((hemlResp) => {
         file.contents = Buffer.from(hemlResp.html);
         var replaceExt = replaceExt || false;
         if (typeof ext === "string" && ext.length > 0) {
