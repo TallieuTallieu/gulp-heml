@@ -37,7 +37,6 @@ export default (options) => {
         console.log("Gulp-HEML: finished processing file: " + file.path);
 
         this.push(file);
-        return cb();
       });
     }
 
